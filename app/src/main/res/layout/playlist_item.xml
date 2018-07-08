@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="@drawable/shape_playlist"
+    >
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/image1" />
+    <TextView
+        android:id="@+id/playlist_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Playlist 1"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/genre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Genre: Dance" />
+    <TextView
+        android:id="@+id/num_tracks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Tracks: 10" />
+    <TextView
+        android:id="@+id/playlist_length"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Length: 30:00" />
+
+
+</LinearLayout>
