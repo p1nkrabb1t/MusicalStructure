@@ -5,14 +5,14 @@
     android:layout_height="wrap_content"
     android:background="@drawable/shape_track"
     android:orientation="horizontal"
-    android:padding="4dp">
+    android:padding="@dimen/pad_XS">
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="4dp">
+        android:padding="@dimen/pad_XS">
 
         <TextView
             android:id="@+id/tv_track_num"
@@ -32,10 +32,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:padding="4dp">
+        android:padding="@dimen/pad_XS">
 
         <TextView
             android:id="@+id/tv_track_name"
+            android:contentDescription="@string/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
@@ -43,6 +44,7 @@
 
         <TextView
             android:id="@+id/tv_artist"
+            android:contentDescription="@string/artist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Tiesto" />
@@ -54,7 +56,7 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:orientation="vertical"
-        android:padding="4dp">
+        android:padding="@dimen/pad_XS">
 
         <TextView
             android:id="@+id/tv_text_length"
@@ -65,6 +67,7 @@
 
         <TextView
             android:id="@+id/tv_track_length"
+            android:contentDescription="@string/length"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="right"
@@ -73,11 +76,11 @@
 
     <ImageView
         android:id="@+id/btn_track"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/list_btn"
+        android:layout_height="@dimen/list_btn"
         android:background="@drawable/button_play"
         android:gravity="right"
-        android:padding="4dp"
+        android:padding="@dimen/pad_XS"
         android:scaleType="centerCrop" />
 
 

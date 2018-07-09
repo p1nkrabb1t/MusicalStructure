@@ -5,21 +5,40 @@
     android:id="@+id/top"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/black"
+    >
+
+    <TextView
+        android:id="@+id/tv_current_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Current Playlist: "
+        android:textStyle="bold"
+        android:textColor="@color/hot_pink"
+        android:textSize="@dimen/txt_M"
+        android:textAllCaps="true"
+        />
+
+    <Button
+        android:id="@+id/btn_playlists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_playlists"/>
 
 
     <ListView
         android:id="@+id/lv_current_tracklist"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#000000"
+        android:background="@color/black"
         android:orientation="vertical"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingTop="16dp"
-        android:verticalSpacing="8dp"
+        android:paddingBottom="@dimen/pad_M"
+        android:paddingLeft="@dimen/pad_M"
+        android:paddingRight="@dimen/pad_M"
+        android:paddingTop="@dimen/pad_M"
+        android:verticalSpacing="@dimen/spc_S"
 
         />
 

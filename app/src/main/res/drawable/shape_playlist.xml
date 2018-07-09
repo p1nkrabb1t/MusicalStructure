@@ -5,19 +5,19 @@
     >
 
     <solid
-        android:color="#ffffff" >
+        android:color="@color/white" >
     </solid>
 
     <stroke
         android:width="2dp"
-        android:color="#fc4bbb" >
+        android:color="@color/hot_pink" >
     </stroke>
 
     <padding
-        android:left="5dp"
-        android:top="5dp"
-        android:right="5dp"
-        android:bottom="5dp"    >
+        android:left="@dimen/pad_XS"
+        android:top="@dimen/pad_XS"
+        android:right="@dimen/pad_XS"
+        android:bottom="@dimen/pad_XS"    >
     </padding>
 
 
