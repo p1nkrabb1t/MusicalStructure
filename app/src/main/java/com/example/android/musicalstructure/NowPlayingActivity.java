@@ -28,6 +28,7 @@ public class NowPlayingActivity extends AppCompatActivity {
     Chronometer elapsed;
     ArrayList<Track> tracklist;
     int playlistChosen;
+    int numPlaylists;
     Track now;
     boolean playing = false;
     int drawableID = R.drawable.button_play;
@@ -39,6 +40,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_now_playing);
         Bundle bundle = getIntent().getExtras();
         playlistChosen = bundle.getInt("KEY_PLAYLIST");
+        numPlaylists = bundle.getInt("KEY_NUM_PLAYLISTS");
         setTracklist();
 
         Button back = findViewById(R.id.btn_back);
@@ -51,16 +53,23 @@ public class NowPlayingActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 playlistChosen = (playlistChosen + 1);
-                Toast.makeText(NowPlayingActivity.this, "playlist case " + playlistChosen, Toast.LENGTH_LONG).show();
+                if (playlistChosen < numPlaylists) {
+                    Toast.makeText(NowPlayingActivity.this, "playlist case " + playlistChosen + "of " + numPlaylists, Toast.LENGTH_LONG).show();
+
+                } else {
+                    playlistChosen = 0;
+                    Toast.makeText(NowPlayingActivity.this, "All playlists played, back to playlist 1 ", Toast.LENGTH_LONG).show();
+                }
                 setTracklist();
 
-
             }
+
         });
+
     }
 
 
-        public void setTracklist() {
+    public void setTracklist() {
             switch (playlistChosen) {
                 case 0:
                     playlist1();
