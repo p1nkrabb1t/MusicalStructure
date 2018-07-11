@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="txt_M">16dp</dimen>
+
+    <dimen name="pad_XS">4dp</dimen>
+    <dimen name="pad_S">8dp</dimen>
+    <dimen name="pad_M">16dp</dimen>
+
+    <dimen name="spc_S">8dp</dimen>
+
+    <dimen name="list_item">150dp</dimen>
+    <dimen name="list_btn">50dp</dimen>
+</resources>
