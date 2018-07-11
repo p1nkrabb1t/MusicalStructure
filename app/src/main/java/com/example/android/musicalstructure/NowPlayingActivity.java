@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.GridView;
 import android.widget.ListAdapter;
@@ -38,37 +39,61 @@ public class NowPlayingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_now_playing);
         Bundle bundle = getIntent().getExtras();
         playlistChosen = bundle.getInt("KEY_PLAYLIST");
+        setTracklist();
 
-
-        switch (playlistChosen) {
-            case 0:
-                playlist1();
-                loadAdapter();
-                break;
-
-            case 1:
-                playlist2();
-                loadAdapter();
-                break;
-
-            case 2:
-                playlist3();
-                loadAdapter();
-                break;
-
-            case 3:
+        Button back = findViewById(R.id.btn_back);
+        back.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
                 back();
-                break;
+            }
+        });
+        Button next = findViewById(R.id.btn_next);
+        next.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                playlistChosen = (playlistChosen + 1);
+                Toast.makeText(NowPlayingActivity.this, "playlist case " + playlistChosen, Toast.LENGTH_LONG).show();
+                setTracklist();
 
+
+            }
+        });
+    }
+
+
+        public void setTracklist() {
+            switch (playlistChosen) {
+                case 0:
+                    playlist1();
+                    loadAdapter();
+                    break;
+
+                case 1:
+                    playlist2();
+                    loadAdapter();
+                    break;
+
+                case 2:
+                    playlist3();
+                    loadAdapter();
+                    break;
+
+                case 3:
+                    Toast.makeText(this, "playlist is empty. Please choose another", LENGTH_LONG).show();
+                    back();
+                    break;
+
+            }
         }
 
-    }
+
 
 
     public void loadAdapter() {
         final TracklistAdapter adapter = new TracklistAdapter(this, tracklist);
+        adapter.notifyDataSetChanged();
         ListView listView = (ListView) findViewById(R.id.lv_current_tracklist);
         listView.setAdapter(adapter);
+
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -84,6 +109,8 @@ public class NowPlayingActivity extends AppCompatActivity {
 
 
     }
+
+
 
     // Create an array of tracks for playlist 1
     public void playlist1() {
@@ -123,7 +150,6 @@ public class NowPlayingActivity extends AppCompatActivity {
 
 
     public void back() {
-        Toast.makeText(this, "playlist is empty. Please choose another", LENGTH_LONG).show();
         Intent i = new Intent(NowPlayingActivity.this, MainActivity.class);
         startActivity(i);
     }

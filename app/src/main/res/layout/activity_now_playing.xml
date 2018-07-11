@@ -13,19 +13,37 @@
         android:id="@+id/tv_current_playlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Current Playlist: "
+        android:text="Current Playlist: "
         android:textStyle="bold"
         android:textColor="@color/hot_pink"
         android:textSize="@dimen/txt_M"
         android:textAllCaps="true"
+        android:layout_margin="@dimen/pad_M"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
 
     <Button
-        android:id="@+id/btn_playlists"
+        android:id="@+id/btn_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_playlists"/>
-
+        android:text="@string/btn_playlists"
+        android:background="@drawable/button"
+        android:layout_margin="@dimen/pad_M"
+        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_next"
+        android:background="@drawable/button"
+        android:layout_margin="@dimen/pad_M"
+        android:layout_weight="1"
+        />
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lv_current_tracklist"
