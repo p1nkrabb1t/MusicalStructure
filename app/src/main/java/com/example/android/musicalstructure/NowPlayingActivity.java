@@ -32,6 +32,8 @@ public class NowPlayingActivity extends AppCompatActivity {
     Track now;
     boolean playing = false;
     int drawableID = R.drawable.button_play;
+    String name;
+    String genre;
 
 
     @Override
@@ -42,6 +44,7 @@ public class NowPlayingActivity extends AppCompatActivity {
         playlistChosen = bundle.getInt("KEY_PLAYLIST");
         numPlaylists = bundle.getInt("KEY_NUM_PLAYLISTS");
         setTracklist();
+        setTitle();
 
         Button back = findViewById(R.id.btn_back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -54,13 +57,13 @@ public class NowPlayingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 playlistChosen = (playlistChosen + 1);
                 if (playlistChosen < numPlaylists) {
-                    Toast.makeText(NowPlayingActivity.this, "playlist case " + playlistChosen + "of " + numPlaylists, Toast.LENGTH_LONG).show();
 
                 } else {
                     playlistChosen = 0;
-                    Toast.makeText(NowPlayingActivity.this, "All playlists played, back to playlist 1 ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(NowPlayingActivity.this, R.string.end_of_playlists, Toast.LENGTH_LONG).show();
                 }
                 setTracklist();
+                setTitle();
 
             }
 
@@ -70,39 +73,36 @@ public class NowPlayingActivity extends AppCompatActivity {
 
 
     public void setTracklist() {
-            switch (playlistChosen) {
-                case 0:
-                    playlist1();
-                    loadAdapter();
-                    break;
+        switch (playlistChosen) {
+            case 0:
+                playlist1();
+                loadAdapter();
+                break;
 
-                case 1:
-                    playlist2();
-                    loadAdapter();
-                    break;
+            case 1:
+                playlist2();
+                loadAdapter();
+                break;
 
-                case 2:
-                    playlist3();
-                    loadAdapter();
-                    break;
+            case 2:
+                playlist3();
+                loadAdapter();
+                break;
 
-                case 3:
-                    Toast.makeText(this, "playlist is empty. Please choose another", LENGTH_LONG).show();
-                    back();
-                    break;
+            case 3:
+                Toast.makeText(this, R.string.empty_playlist, LENGTH_LONG).show();
+                back();
+                break;
 
-            }
         }
-
-
+    }
 
 
     public void loadAdapter() {
         final TracklistAdapter adapter = new TracklistAdapter(this, tracklist);
         adapter.notifyDataSetChanged();
-        ListView listView = (ListView) findViewById(R.id.lv_current_tracklist);
+        ListView listView = findViewById(R.id.lv_current_tracklist);
         listView.setAdapter(adapter);
-
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -119,10 +119,18 @@ public class NowPlayingActivity extends AppCompatActivity {
 
     }
 
+    public void setTitle() {
+        TextView titleTextView = findViewById(R.id.tv_current_playlist);
+        titleTextView.setText(getString(R.string.title_now_playing, name, genre));
+
+    }
 
 
     // Create an array of tracks for playlist 1
     public void playlist1() {
+        name = "Playlist 1";
+        genre = getString(R.string.genre_trance);
+
         tracklist = new ArrayList<>();
 
         if (playing) {
@@ -139,6 +147,8 @@ public class NowPlayingActivity extends AppCompatActivity {
 
     // Create an array of tracks for playlist 2
     public void playlist2() {
+        name = "Playlist 2";
+        genre = getString(R.string.genre_house);
         tracklist = new ArrayList<>();
 
         tracklist.add(new Track("1", "House Music", "Eddie Amador", "3:00", drawableID));
@@ -149,6 +159,8 @@ public class NowPlayingActivity extends AppCompatActivity {
 
     // Create an array of tracks for playlist 3
     public void playlist3() {
+        name = "Playlist 3";
+        genre = getString(R.string.genre_electro);
         tracklist = new ArrayList<>();
 
         tracklist.add(new Track("1", "Riverside", "Sidney Samson", "3:00", drawableID));

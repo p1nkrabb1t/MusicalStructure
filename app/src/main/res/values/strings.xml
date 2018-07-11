@@ -8,4 +8,10 @@
     <string name="playlists">Playlists</string>
     <string name="btn_playlists">Back to Playlists</string>
     <string name="btn_next">Next Playlist</string>
+    <string name="end_of_playlists">End of library, back to first playlist</string>
+    <string name="empty_playlist">playlist is empty. Please choose another</string>
+    <string name="title_now_playing">Now Playing: \'%1$s\' (%2$s) </string>
+    <string name="genre_trance">Trance</string>
+    <string name="genre_house">House</string>
+    <string name="genre_electro">Electro</string>
 </resources>
