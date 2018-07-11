@@ -44,21 +44,21 @@ public class TracklistAdapter extends ArrayAdapter<Track> {
 
 
         // Find and update the TextView in the tracklist_item.xml layout with the track number
-        TextView trackNumTextView = (TextView) listItemView.findViewById(R.id.tv_track_num);
+        TextView trackNumTextView = listItemView.findViewById(R.id.tv_track_num);
         trackNumTextView.setText(currentTrack.getTrackNum());
         trackNamePlaying = currentTrack.getTrackNum();
 
 
         // Find and update the TextView in the tracklist_item.xml layout with the track name
-        TextView trackNameTextView = (TextView) listItemView.findViewById(R.id.tv_track_name);
+        TextView trackNameTextView = listItemView.findViewById(R.id.tv_track_name);
         trackNameTextView.setText(currentTrack.getTrackName());
 
         // Find and update the TextView in the tracklist_item.xml layout with the artist name
-        TextView artistNameTextView = (TextView) listItemView.findViewById(R.id.tv_artist);
+        TextView artistNameTextView = listItemView.findViewById(R.id.tv_artist);
         artistNameTextView.setText(currentTrack.getArtist());
 
         // Find and update the TextView in the tracklist_item.xml layout with the track length
-        TextView trackLengthTextView = (TextView) listItemView.findViewById(R.id.tv_track_length);
+        TextView trackLengthTextView = listItemView.findViewById(R.id.tv_track_length);
         trackLengthTextView.setText(currentTrack.getTrackLength());
 
         // Find and update the ButtonView in the tracklist_item.xml layout with a play/pause image
@@ -75,11 +75,11 @@ public class TracklistAdapter extends ArrayAdapter<Track> {
             public void onClick(View view) {
                 if (!playing) {
 
-                    playPauseButton.setBackgroundResource(R.drawable.button_pause);
+                    playPauseButton.setBackgroundResource(R.mipmap.ic_pause_black_24dp);
                     playing = true;
                 } else if (playing) {
 
-                    playPauseButton.setBackgroundResource(R.drawable.button_play);
+                    playPauseButton.setBackgroundResource(R.mipmap.ic_play_arrow_black_24dp);
                     playing = false;
                 }
             }
