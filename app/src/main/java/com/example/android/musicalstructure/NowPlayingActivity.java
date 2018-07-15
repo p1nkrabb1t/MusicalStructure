@@ -1,21 +1,12 @@
 package com.example.android.musicalstructure;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.res.Resources;
-import android.graphics.Color;
-import android.media.Image;
-import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Chronometer;
-import android.widget.GridView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +16,6 @@ import java.util.ArrayList;
 import static android.widget.Toast.LENGTH_LONG;
 
 public class NowPlayingActivity extends AppCompatActivity {
-    Chronometer elapsed;
     ArrayList<Track> tracklist;
     int playlistChosen;
     int numPlaylists;
@@ -34,7 +24,6 @@ public class NowPlayingActivity extends AppCompatActivity {
     int drawableID = R.drawable.button_play;
     String name;
     String genre;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,13 +53,10 @@ public class NowPlayingActivity extends AppCompatActivity {
                 }
                 setTracklist();
                 setTitle();
-
             }
 
         });
-
     }
-
 
     public void setTracklist() {
         switch (playlistChosen) {
@@ -97,7 +83,6 @@ public class NowPlayingActivity extends AppCompatActivity {
         }
     }
 
-
     public void loadAdapter() {
         final TracklistAdapter adapter = new TracklistAdapter(this, tracklist);
         adapter.notifyDataSetChanged();
@@ -115,16 +100,12 @@ public class NowPlayingActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 
     public void setTitle() {
         TextView titleTextView = findViewById(R.id.tv_current_playlist);
         titleTextView.setText(getString(R.string.title_now_playing, name, genre));
-
     }
-
 
     // Create an array of tracks for playlist 1
     public void playlist1() {
@@ -174,6 +155,5 @@ public class NowPlayingActivity extends AppCompatActivity {
         Intent i = new Intent(NowPlayingActivity.this, MainActivity.class);
         startActivity(i);
     }
-
 
 }

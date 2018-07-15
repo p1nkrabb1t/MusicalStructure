@@ -36,17 +36,17 @@
 
         <TextView
             android:id="@+id/tv_track_name"
-            android:contentDescription="@string/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/title"
             android:textStyle="bold"
             tools:text="Adagio" />
 
         <TextView
             android:id="@+id/tv_artist"
-            android:contentDescription="@string/artist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/artist"
             tools:text="Tiesto" />
 
     </LinearLayout>
@@ -67,9 +67,9 @@
 
         <TextView
             android:id="@+id/tv_track_length"
-            android:contentDescription="@string/length"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="@string/length"
             android:gravity="right"
             tools:text="3:00" />
     </LinearLayout>

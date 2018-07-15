@@ -1,8 +1,5 @@
 package com.example.android.musicalstructure;
 
-import android.view.View;
-import android.widget.AdapterView;
-
 /**
  * Created by Ha3el on 17/04/2018.
  */

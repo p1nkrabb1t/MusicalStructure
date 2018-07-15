@@ -1,36 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="@dimen/pad_S"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@drawable/shape_playlist"
-    >
+    android:orientation="vertical"
+    android:padding="@dimen/pad_S">
 
     <ImageView
         android:id="@+id/image"
-        android:contentDescription="@string/playlist"
         android:layout_width="@dimen/list_item"
         android:layout_height="@dimen/list_item"
+        android:contentDescription="@string/playlist"
         android:scaleType="centerCrop"
         tools:src="@drawable/image1" />
+
     <TextView
         android:id="@+id/playlist_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Playlist 1"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        tools:text="Playlist 1" />
+
     <TextView
         android:id="@+id/genre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Genre: Dance" />
+
     <TextView
         android:id="@+id/num_tracks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Tracks: 10" />
+
     <TextView
         android:id="@+id/playlist_length"
         android:layout_width="match_parent"

@@ -15,7 +15,6 @@
         android:textSize="@dimen/txt_M"
         android:textStyle="bold" />
 
-
     <GridView
         android:id="@+id/gv_playlists"
         android:layout_width="match_parent"
@@ -28,8 +27,6 @@
         android:paddingLeft="@dimen/pad_M"
         android:paddingRight="@dimen/pad_M"
         android:paddingTop="@dimen/pad_M"
-        android:verticalSpacing="@dimen/spc_S"
-
-        />
+        android:verticalSpacing="@dimen/spc_S" />
 
 </LinearLayout>

@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_current_playlist"
@@ -18,31 +17,30 @@
         android:textColor="@color/hot_pink"
         android:textSize="@dimen/txt_M"
         android:textStyle="bold"
-        tools:text="Current Playlist: "
-        />
+        tools:text="Current Playlist: " />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/pad_M"
-        android:layout_weight="1"
-        android:background="@drawable/button"
-        android:text="@string/btn_playlists" />
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/pad_M"
-        android:layout_weight="1"
-        android:background="@drawable/button"
-        android:text="@string/btn_next"
-        />
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/pad_M"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="@string/btn_playlists" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/pad_M"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="@string/btn_next" />
     </LinearLayout>
 
     <ListView
@@ -56,9 +54,5 @@
         android:paddingLeft="@dimen/pad_M"
         android:paddingRight="@dimen/pad_M"
         android:paddingTop="@dimen/pad_M"
-        android:verticalSpacing="@dimen/spc_S"
-
-        />
-
-
+        android:verticalSpacing="@dimen/spc_S" />
 </LinearLayout>
